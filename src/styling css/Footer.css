@@ -37,7 +37,8 @@
 
 .icon{
     color:#F0DDBF ;
-    font-size: 30px;
+    font-size: 37px;
+    cursor: pointer;
 }
 .btn{
     border: none;
