@@ -9,6 +9,11 @@ import "../styling css/Footer.css";
 
 
 const Footer = () => {
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="footer">
     <div className='footer-container '>
@@ -36,7 +41,9 @@ const Footer = () => {
     <div className='right'>
        <div className='back-to-top'>
         <button className='btn back-to-top-button'>
-          <img src={Chevronsup} alt='backtotop'/>
+          <img src={Chevronsup} alt='backtotop'
+          onClick={scrollToTop}
+          />
         </button>
        </div>
        <div className='footer-copyright'>
@@ -48,4 +55,4 @@ const Footer = () => {
   )
 }
 
-export default Footer
+export default Footer;
