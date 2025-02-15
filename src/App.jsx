@@ -7,7 +7,7 @@ import About from './about-contact/About'
 import Contact from './about-contact/Contact'
 import Servecies from './servecies page/servecies'
 import Login from './components/login'
-
+import Footer from './components/footer'
 
 
 function App() {
@@ -22,6 +22,7 @@ function App() {
         <Route path='/services' element={<Servecies />} />
         <Route path='/login' element={<Login />} />
         </Routes>
+        <Footer/>
     </Router>
   )
 }

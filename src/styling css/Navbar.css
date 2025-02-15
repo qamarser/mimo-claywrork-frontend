@@ -1,3 +1,7 @@
+*{
+  margin: 0;
+  font-family: "Inter", serif;
+}
 /* general Navbar styling */
 .navbar {
     background-color: #A69AB2;
@@ -12,12 +16,12 @@
     justify-content: space-between;
     align-items: center;
     max-width: 1100px;
-    height: 172px;
+    height: 120px;
     margin: auto;
 }
 
 .logo img{
-    height: 156px;
+    height: 140px;
 }
 
 .nav-links{
@@ -175,11 +179,14 @@
       display: none;
       flex-direction: column;
       background: #AFA0B2;
+      opacity: 90%;
       position: absolute;
       top: 60px;
       left: 0;
       width: 100%;
       text-align: center;
+      align-items: center;
+      align-content: center;
       padding: 10px 0;
     }
   
