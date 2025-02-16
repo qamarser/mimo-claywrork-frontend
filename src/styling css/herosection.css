@@ -1,0 +1,27 @@
+
+.herosection-container{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    height: 486px;
+    gap: 234px;
+}
+
+
+.typedelement{
+    font-family: "Caveat", serif;
+    font-weight: bold;
+    font-size: 46px;
+    display: inline-block;
+    white-space: nowrap;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+}
+
+
+.navbar{
+    background: none;
+    box-shadow: none;
+}

@@ -1,24 +1,26 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import "../styling css/Navbar.css";
 import Logo from '../assets/logo.svg';
 import { FaShoppingCart, FaUserCircle, FaChevronDown } from "react-icons/fa";
 import { IoMenu } from "react-icons/io5";
 
-const Navbar = () => {
+const Navbar = ({ isHeroSection = false }) => {
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (
-      <nav className='navbar'>
-        <div className='container'>
+      <nav className={`navbar ${isHeroSection ? 'hero-section-navbar' : ''}`}>
 
-          <div className='logo'>
+        <div className='container'>
+          <div className='logo-img'>
             <img src={Logo} alt='logo' />
           </div>
 
           <ul className={`nav-links ${isMobileMenuOpen ? 'open' : ''}`}>
-            <li><a href='Home.jsx'>Home</a></li>
-            <li><a href='About.jsx'>About</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About</Link></li>
 
             <li className='dropdown'>
               <a onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
@@ -27,15 +29,16 @@ const Navbar = () => {
               </a>
               {isDropdownOpen && (
                 <div className="dropdown-content">
-                  <a href='#'>Keychains</a>
-                  <a href='#'>Consters</a>
-                  <a href='#'>Vases</a>
-                  <a href='#'>Decoration</a>
+                  <Link to="/services">All Services</Link>
+                  <Link to="#">Keychains</Link>
+                  <Link to="#">Consters</Link>
+                  <Link to="#">Vases</Link>
+                  <Link to="#">Decoration</Link>
                 </div>
               )}
             </li>
 
-            <li><a href='Contact.jsx'>Contact</a></li>
+            <li><Link to="/contact">Contact</Link></li>
           </ul>
 
           <div className='icons'>
@@ -50,7 +53,6 @@ const Navbar = () => {
           <button className='menu-toggle' onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             <IoMenu />
           </button>
-
         </div>
       </nav>
   );
