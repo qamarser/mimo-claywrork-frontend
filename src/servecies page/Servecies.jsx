@@ -9,7 +9,7 @@ const CategoryList = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/categories')
+    fetch('http://localhost:5000/api/categories')
       .then((response) => response.json())
       .then((data) => setCategories(data))
       .catch((error) => console.error("Error fetching categories!", error));
@@ -17,7 +17,7 @@ const CategoryList = () => {
 
   useEffect(() => {
     categories.forEach((category) => {
-      fetch(`http://localhost:3000/api/products/category/${category._id}`)
+      fetch(`http://localhost:5000/api/products/category/${category._id}`)
         .then((response) => response.json())
         .then((data) => {
           if (Array.isArray(data)) {
