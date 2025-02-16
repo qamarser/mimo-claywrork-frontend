@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import './About.css'
 import Rectangle from "../assets/Rectangle.svg"
+import Contact from './Contact'
 
 
 const About = () => {
@@ -28,9 +29,11 @@ const About = () => {
       
      <div className='rectangle'>
       <img src={Rectangle} alt='rectangle' />
+
      </div>
-      
+     <contact/>
     </div>
+ 
   )
 }
 

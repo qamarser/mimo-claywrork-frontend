@@ -41,7 +41,7 @@ const CategoryList = () => {
     <div className="category-container">
       {categories.map((category) => (
         <div key={category._id} className="category-section">
-          <h1 className="category-title">{category.name}</h1>
+          <h1 className="category-title" id={category.name}  >{category.name}</h1>
           <div className="products-grid">
             {Array.isArray(productsByCategory[category._id]) ? (
               productsByCategory[category._id].map((product) => (

@@ -29,12 +29,13 @@ const Navbar = ({ isHeroSection = false }) => {
               </a>
               {isDropdownOpen && (
                 <div className="dropdown-content">
-                  <Link to="/services">All Services</Link>
-                  <Link to="#">Keychains</Link>
-                  <Link to="#">Consters</Link>
-                  <Link to="#">Vases</Link>
-                  <Link to="#">Decoration</Link>
-                </div>
+                <Link to="/services">All Services</Link>
+               <a href="/services#Earrings">Earrings</a>
+                <a href="/services#Keychains">Keychains</a>
+                <a href="/services#Coasters">Coasters</a>
+                <a href="/services#Vases">Vases</a>
+                <a href="/services#Decoration">Decoration</a>
+              </div>
               )}
             </li>
 
