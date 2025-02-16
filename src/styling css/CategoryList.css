@@ -6,9 +6,8 @@
   .category-section {
     margin-bottom: 40px;
   }
-  @import url('https://fonts.googleapis.com/css2?family=Jacques+Francois+Shadow&display=swap');
   .category-title {
-    
+    font-family: "Jacques Francois Shadow", serif;
     margin-bottom: 20px;
     color: #000000;
     font-family: 'Jacques Francois Shadow', serif;

@@ -201,3 +201,57 @@
       display: block;
     }
   }
+
+  @media (max-width: 1024px) {
+    .container {
+      height: 70px;
+    }
+  
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background: rgba(175, 160, 178, 0.95);
+      position: absolute;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      align-items: center;
+      padding: 15px 0;
+    }
+  
+    .nav-links.open {
+      display: flex;
+    }
+  
+    .menu-toggle {
+      display: block;
+    }
+  
+    .logo-img img {
+      height: 78px;
+    }
+
+    .icons {
+      font-size: 20px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .container {
+      height: 60px;
+    }
+  
+    .logo-img img {
+      height: 50px;
+    }
+  
+    .nav-links a {
+      font-size: 16px;
+      padding: 10px;
+    }
+  
+    .icons {
+      font-size: 18px;
+    }
+  }
