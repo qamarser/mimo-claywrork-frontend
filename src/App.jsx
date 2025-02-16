@@ -39,11 +39,11 @@ const MainLayout = () => {
         <Route path='/contact' element={<Contact />} />
         <Route path='/services' element={<CategoryList />} />
         <Route path='/login' element={<Login />} />
-
+        <Route path="/product/:productId" element={<ProductDetail />} />
+       
     </Routes>
 
-        <Route path="/product/:productId" element={<ProductDetail />} />
-        </Routes>
+        
 
 
     <Footer />  {/* Footer appears on all pages */}
