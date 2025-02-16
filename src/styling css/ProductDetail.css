@@ -2,31 +2,31 @@
 .product-detail {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    justify-content: center;   /* Center horizontally */ 
     padding: 20px;
-    background-color: #faf3dc; /* Soft pastel beige */
     font-family: 'Jacques Francois Shadow', serif;
+    gap: 20px; /* Adds space between elements */
 }
 
-.photos {
-    flex: 1;
+.parent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .photos img {
     max-width: 300px;
     height: auto;
-    border-radius: 0; /* No border radius */
+    border-radius: 10px;
 }
 
 .details {
-    flex: 2;
     margin-left: 30px;
 }
 
 .details h1 {
     font-size: 28px;
     margin-bottom: 10px;
-    font-family: 'Jacques Francois Shadow', serif;
 }
 
 .price, .colors {
@@ -35,18 +35,14 @@
     color: #333;
 }
 
-.colors span {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #555;
-    margin-left: 10px;
-}
+.quantity-select {
+    margin-top: 10px;
+    margin-bottom: 20px; /* Added space below quantity select */
+    padding: 10px; /* Increased padding for larger size */
+     border-radius: 5px; 
+      font-size: 18px; /* Increased font size */
+     width: 100px; /* Increased width */
 
-.quantity-select select {
-    padding: 6px;
-    border-radius: 5px;
 }
 
 button {
@@ -58,10 +54,22 @@ button {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-top: 20px; /* Adds space between button and items above */
 }
 
 button:hover {
     background-color: #7aa781;
+}
+
+.reviewsection {
+    width: 80%;
+    margin: 30px auto; /* Center and add margin above */
+    text-align: center;
+}
+
+.reviewsection img {
+    width: 100%;
+    height: auto;
 }
 
 /* Responsive Design */
