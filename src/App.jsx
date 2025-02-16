@@ -39,9 +39,8 @@ const MainLayout = () => {
         <Route path='/contact' element={<Contact />} />
         <Route path='/services' element={<CategoryList />} />
         <Route path='/login' element={<Login />} />
-        <Route path="/product/:productId" element={<ProductDetail />} />
 
-    </Routes>
+  </Routes>
 
        
        
