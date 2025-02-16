@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styling css/CategoryList.css';  // Import CSS file
@@ -60,3 +61,4 @@ const CategoryList = () => {
 };
 
 export default CategoryList;
+

@@ -1,4 +1,8 @@
+*{
+    margin: 0;
+}
 body{
     font-family: "Inter", serif;
+    background-color: #FAF0D2;
     /* font-family: "Poppins", serif; */
 }
