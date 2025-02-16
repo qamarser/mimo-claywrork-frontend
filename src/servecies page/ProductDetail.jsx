@@ -8,7 +8,7 @@ const ProductDetail = () => {
   const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/products/${productId}`)
+    fetch(`http://localhost:5000/api/products/${productId}`)
       .then((response) => response.json())
       .then((data) => setProduct(data))
       .catch((error) => console.error("Error fetching product details!", error));
