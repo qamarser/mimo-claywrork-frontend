@@ -53,7 +53,7 @@ const Contact = () => {
   };
 
   return (
-    <div className='contact-container'id="contact">
+    <div className='contact-container' id="contact">
       <div className='text-container'>
         {data ? (
         <>

@@ -27,6 +27,7 @@ const ProductDetail = () => {
   if (!product) return <p>Loading product details...</p>;
 
   return (
+    <div className='parent'>
     <div className="product-detail">
         <div className='photos'>
         <img src={product.images[0]} alt={product.name} />
@@ -49,6 +50,9 @@ const ProductDetail = () => {
       </div>
       <button onClick={handleAddToCart}>Add to Cart</button>
         </div>
+     
+    </div>
+    <div className='reviewsection'><img src='../Public/Card Grid Reviews.png' width="70%"></img> </div>
     </div>
   );
 };
