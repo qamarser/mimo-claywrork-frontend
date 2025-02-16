@@ -1,6 +1,6 @@
-/* *{
-    background-color: #FAF0D2;
-} */
+*{
+    margin: 0;
+}
 body{
     font-family: "Inter", serif;
     background-color: #FAF0D2;

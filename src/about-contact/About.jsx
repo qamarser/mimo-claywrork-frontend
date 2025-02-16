@@ -1,12 +1,34 @@
 import React from 'react'
+import { useEffect, useState } from 'react'
+import './About.css'
+import Rectangle from "../assets/Rectangle.svg"
 
 
 const About = () => {
+  const [data, setData] = useState(null);
+
+  useEffect (()=>{
+    fetch(import.meta.env.VITE_ABOUT_DATA_API)
+    .then((response) => response.json())
+    .then((data) => setData(data))
+    .catch((error) => console.error("Error fetching about data:", error));
+    }, []);
+
   return (
-    <div>
+    <div className='about-container'>
+      {data ? (
+        <>
+        <img src={data.image} alt='about' className='about-image'/>
+        <p className='about-description'>{data.description}</p>
+        </>
+      ) :(
+        <p>Loading...</p>
+      )
+    }
       
-      <h1>About Page</h1>
-     
+     <div className='rectangle'>
+      <img src={Rectangle} alt='rectangle' />
+     </div>
       
     </div>
   )
