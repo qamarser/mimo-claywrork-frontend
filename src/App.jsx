@@ -8,6 +8,7 @@ import Contact from './about-contact/Contact'
 import CategoryList from './servecies page/Servecies'
 import Login from './components/login'
 import Footer from './components/footer'
+import ProductDetail from './servecies page/ProductDetail'
 
 
 function App() {

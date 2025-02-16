@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';  // For navigation
+import { useNavigate } from 'react-router-dom';
+import '../styling css/CategoryList.css';  // Import CSS file
 
 const CategoryList = () => {
   const [categories, setCategories] = useState([]);
   const [productsByCategory, setProductsByCategory] = useState({});
-  const navigate = useNavigate();  // Initialize navigation hook
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch('http://localhost:3000/api/categories')
@@ -32,30 +33,28 @@ const CategoryList = () => {
   }, [categories]);
 
   const handleProductClick = (productId) => {
-    navigate(`/product/${productId}`);  // Navigate to product detail page
+    navigate(`/product/${productId}`);
   };
 
   return (
-    <div>
-      <ul>
-        {categories.map((category) => (
-          <li key={category._id}>
-            <h3>{category.name}</h3>
-            <ul>
-              {Array.isArray(productsByCategory[category._id]) ? (
-                productsByCategory[category._id].map((product) => (
-                  <li key={product._id} onClick={() => handleProductClick(product._id)} style={{ cursor: 'pointer' }}>
-                    <img src={product.images[0]} alt={product.name} style={{ width: '100px', height: '100px' }} />
-                    <p>{product.name}</p>
-                  </li>
-                ))
-              ) : (
-                <li>No products found.</li>
-              )}
-            </ul>
-          </li>
-        ))}
-      </ul>
+    <div className="category-container">
+      {categories.map((category) => (
+        <div key={category._id} className="category-section">
+          <h1 className="category-title">{category.name}</h1>
+          <div className="products-grid">
+            {Array.isArray(productsByCategory[category._id]) ? (
+              productsByCategory[category._id].map((product) => (
+                <div key={product._id} className="product-item" onClick={() => handleProductClick(product._id)}>
+                  <img src={product.images[0]} alt={product.name} className="product-image" />
+                  <p className="product-price">${product.price}</p>
+                </div>
+              ))
+            ) : (
+              <p>No products found.</p>
+            )}
+          </div>
+        </div>
+      ))}
     </div>
   );
 };

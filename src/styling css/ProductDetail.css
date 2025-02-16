@@ -1,0 +1,83 @@
+/* Updated ProductDetail.css */
+.product-detail {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #faf3dc; /* Soft pastel beige */
+    font-family: 'Jacques Francois Shadow', serif;
+}
+
+.photos {
+    flex: 1;
+}
+
+.photos img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 0; /* No border radius */
+}
+
+.details {
+    flex: 2;
+    margin-left: 30px;
+}
+
+.details h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-family: 'Jacques Francois Shadow', serif;
+}
+
+.price, .colors {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.colors span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #555;
+    margin-left: 10px;
+}
+
+.quantity-select select {
+    padding: 6px;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #93b899;
+    color: #fff;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #7aa781;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-detail {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .photos img {
+        max-width: 100%;
+    }
+
+    .details {
+        margin-left: 0;
+        margin-top: 20px;
+        text-align: center;
+    }
+}
