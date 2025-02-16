@@ -8,9 +8,6 @@ import Contact from './about-contact/Contact'
 import CategoryList from './servecies page/Servecies'
 import Login from './components/login'
 import Footer from './components/footer'
-
-import Herosection from './components/herosection.jsx'
-
 import ProductDetail from './servecies page/ProductDetail'
 
 
@@ -39,6 +36,8 @@ const MainLayout = () => {
         <Route path='/contact' element={<Contact />} />
         <Route path='/services' element={<CategoryList />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/product/:productId' element={<ProductDetail />} />
+        
 
   </Routes>
 

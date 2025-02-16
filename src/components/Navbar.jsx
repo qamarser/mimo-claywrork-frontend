@@ -20,7 +20,7 @@ const Navbar = ({ isHeroSection = false }) => {
 
           <ul className={`nav-links ${isMobileMenuOpen ? 'open' : ''}`}>
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
+            <li><Link to="/about#about">About</Link></li>
 
             <li className='dropdown'>
               <a onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
@@ -39,7 +39,7 @@ const Navbar = ({ isHeroSection = false }) => {
               )}
             </li>
 
-            <li><Link to="/contact">Contact</Link></li>
+            <li><Link to="/about#contact">Contact</Link></li>
           </ul>
 
           <div className='icons'>
