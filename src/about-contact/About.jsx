@@ -31,7 +31,7 @@ const About = () => {
       <img src={Rectangle} alt='rectangle' />
 
      </div>
-     <contact/>
+     <Contact/>
     </div>
  
   )

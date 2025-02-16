@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import { CiMail } from "react-icons/ci";
 import { IoCallOutline } from "react-icons/io5";
+import "./contact.css"
 
 const Contact = () => {
    const [data, setData] = useState(null);
@@ -18,7 +19,38 @@ const Contact = () => {
       })
       .catch((error) => console.error("Error fetching contact data:", error));
   }, []);
-  
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch(import.meta.env.VITE_REQUESTS_SUBMIT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      if (response.ok) {
+        console.log("Form Submitted Successfully");
+        setFormData({ name: "", phone: "", email: "", message: "" });
+      } else {
+        console.error("Submission Failed");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
+  };
 
   return (
     <div className='contact-container' id="contact">
@@ -44,6 +76,49 @@ const Contact = () => {
       <p>+961 71606968</p>
       </div>
       </div>
+
+      <div className="contact-form">
+        <h2>Get in Touch</h2>
+        <p>You can reach us anytime</p>
+        <form onSubmit={handleSubmit}>
+          <label>Name</label>
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter your name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+          <label>Phonenumber(Optional)</label>
+          <input
+            type="text"
+            name="phone"
+            placeholder="Enter your phone number"
+            value={formData.phone}
+            onChange={handleChange}
+          />
+          <label>Email</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <label>Message</label>
+          <textarea
+            name="message"
+            placeholder="Enter your message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          ></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+
     </div>
   )
 }

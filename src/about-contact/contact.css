@@ -1,0 +1,125 @@
+/* contact.css */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .text-container {
+    width: 45%;
+    padding: 20px;
+    color: #3e3e3e;
+  }
+  
+  .text-container h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .text-container .text-1,
+  .text-container .text-2,
+  .text-container .text-3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+  
+  .text-container .text-1 {
+    font-weight: bold;
+  }
+  
+  .mail, .phone-no {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    font-size: 16px;
+  }
+  
+  .contact-icon {
+    font-size: 22px;
+    margin-right: 10px;
+    color: #3e3e3e;
+  }
+  
+  .contact-form {
+    width: 50%;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-form h2 {
+    font-size: 26px;
+    margin-bottom: 5px;
+    color: #3e3e3e;
+  }
+  
+  .contact-form p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .contact-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #3e3e3e;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder {
+    color: #aaa;
+    font-size: 13px;
+  }
+  
+  .contact-form textarea {
+    resize: vertical;
+    height: 120px;
+  }
+  
+  .contact-form button {
+    background-color: #93B899;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .contact-form button:hover {
+    background-color: #8d734a;
+  }
+  
+  @media (max-width: 768px) {
+    .contact-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .text-container, .contact-form {
+      width: 100%;
+      padding: 20px;
+    }
+  }
+  
