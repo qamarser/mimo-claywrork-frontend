@@ -40,7 +40,7 @@ const MainLayout = () => {
         <Route path='/services' element={<CategoryList />} />
         <Route path='/login' element={<Login />} />
 
-  
+  </Routes>
 
        
        
