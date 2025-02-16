@@ -1,0 +1,52 @@
+.category-container {
+    padding: 20px;
+    background-color: #FAF0D2;
+  }
+  
+  .category-section {
+    margin-bottom: 40px;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Jacques+Francois+Shadow&display=swap');
+  .category-title {
+    
+    margin-bottom: 20px;
+    color: #000000;
+    font-family: 'Jacques Francois Shadow', serif;
+  }
+  
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 16px;
+  }
+  
+  .product-item {
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .product-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .product-image {
+    width: 100%;
+    height: auto;
+    border-radius: 0 !important;
+  }
+ 
+  .product-price {
+    font-size: 14px;
+    color: #0b0101;
+   
+  }
+  
+  @media (max-width: 600px) {
+    .products-grid {
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+  }
+  
