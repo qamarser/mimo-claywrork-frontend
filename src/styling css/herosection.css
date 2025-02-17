@@ -6,6 +6,7 @@
     align-items: center;
     height: 486px;
     gap: 234px;
+    min-height: 50vh;
 }
 
 
@@ -24,4 +25,15 @@
 .navbar{
     background: none;
     box-shadow: none;
+}
+
+@media screen and (max-width: 768px) {
+    .herosection-container {
+        gap: 46vh;
+        padding: 3vh 3vw;
+    }
+
+    .typedelement {
+        font-size: clamp(20px, 4vw, 36px);
+    }
 }
