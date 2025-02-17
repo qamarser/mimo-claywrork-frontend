@@ -53,7 +53,7 @@ const Contact = () => {
   };
 
   return (
-    <div className='contact-container' id="contact">
+    <div className='contact-container' >
       <div className='text-container'>
         {data ? (
         <>
@@ -78,7 +78,7 @@ const Contact = () => {
       </div>
 
       <div className="contact-form">
-        <h2>Get in Touch</h2>
+        <h2 id="contact" >Get in Touch</h2>
         <p>You can reach us anytime</p>
         <form onSubmit={handleSubmit}>
           <label>Name</label>
