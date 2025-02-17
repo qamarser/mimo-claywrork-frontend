@@ -7,7 +7,8 @@ import About from './about-contact/About'
 import Contact from './about-contact/Contact'
 import CategoryList from './servecies page/Servecies'
 import Login from './components/login'
-import Footer from './components/footer'
+import Footer from './components/Footer'
+
 import ProductDetail from './servecies page/ProductDetail'
 
 

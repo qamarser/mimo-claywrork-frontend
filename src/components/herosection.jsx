@@ -32,7 +32,7 @@ const Herosection = () => {
         startDelay:2000,
         typeSpeed: 40,
         backSpeed:20,
-        backDelay:5000,
+        backDelay:4000,
         loop:true
   });
 
