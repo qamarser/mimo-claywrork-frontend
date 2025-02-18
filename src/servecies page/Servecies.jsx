@@ -9,16 +9,42 @@ const CategoryList = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('https://mimo-claywrork-backend.onrender.com/api/categories')
-      .then((response) => response.json())
+    fetch(import.meta.env.VITE_CATEGORIES_API || 'https://mimo-claywrork-backend.onrender.com/api/categories', {
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
       .then((data) => setCategories(data))
-      .catch((error) => console.error("Error fetching categories!", error));
+      .catch((error) => {
+        console.error("Error fetching categories:", error);
+        setCategories([{ _id: '1', name: 'Featured Products' }]);
+      });
+
   }, []);
 
   useEffect(() => {
     categories.forEach((category) => {
-      fetch(`https://mimo-claywrork-backend.onrender.com/api/products/category/${category._id}`)
-        .then((response) => response.json())
+      fetch(import.meta.env.VITE_PRODUCTS_API || `https://mimo-claywrork-backend.onrender.com/api/products/category/${category._id}`, {
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.json();
+        })
         .then((data) => {
           if (Array.isArray(data)) {
             setProductsByCategory((prev) => ({
@@ -27,9 +53,20 @@ const CategoryList = () => {
             }));
           } else {
             console.error(`Invalid data for category ${category._id}`, data);
+            setProductsByCategory((prev) => ({
+              ...prev,
+              [category._id]: []
+            }));
           }
         })
-        .catch((error) => console.error(`Error fetching products for category ${category._id}`, error));
+        .catch((error) => {
+          console.error(`Error fetching products for category ${category._id}`, error);
+          setProductsByCategory((prev) => ({
+            ...prev,
+            [category._id]: []
+          }));
+        });
+
     });
   }, [categories]);
 
@@ -61,4 +98,3 @@ const CategoryList = () => {
 };
 
 export default CategoryList;
-

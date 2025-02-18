@@ -8,16 +8,34 @@ const Contact = () => {
    const [data, setData] = useState(null);
    useEffect(() => {
     console.log("Fetching from:", import.meta.env.VITE_CONTACT_TEXT_API);
-    fetch(import.meta.env.VITE_CONTACT_TEXT_API)
+    fetch(import.meta.env.VITE_CONTACT_TEXT_API, {
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
+    })
       .then((response) => {
         console.log("Response status:", response.status);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
         return response.json();
       })
       .then((data) => {
         console.log("Fetched data:", data);
         setData(data);
       })
-      .catch((error) => console.error("Error fetching contact data:", error));
+      .catch((error) => {
+        console.error("Error fetching contact data:", error);
+        setData({
+          title: 'Contact Us',
+          text1: 'We\'d love to hear from you!',
+          text2: 'Feel free to reach out with any questions or inquiries.',
+          text3: 'Our team is here to assist you.'
+        });
+      });
+
   }, []);
   const [formData, setFormData] = useState({
     name: "",
@@ -35,11 +53,14 @@ const Contact = () => {
     try {
       const response = await fetch(import.meta.env.VITE_REQUESTS_SUBMIT, {
         method: "POST",
+        mode: 'cors',
         headers: {
           "Content-Type": "application/json",
+          "Accept": "application/json"
         },
         body: JSON.stringify(formData),
       });
+
       
       if (response.ok) {
         console.log("Form Submitted Successfully");

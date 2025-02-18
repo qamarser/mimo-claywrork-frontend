@@ -11,14 +11,30 @@ const Herosection = () => {
   const [bgImage, setBgImage] = useState(''); // Store background image URL
 
   useEffect (()=>{
-    // fetch bg image from api
-    fetch(import.meta.env.VITE_HERO_IMAGE_API)
-    .then((response) => response.json())
+    // fetch bg image from api with CORS mode
+    fetch(import.meta.env.VITE_HERO_IMAGE_API, {
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
+    })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
     .then((data) => {
       setBgImage(data.imageUrl);
-      })
-      .catch((error) => console.error("error fetching hero image", error));
-      }, []);
+    })
+    .catch((error) => {
+      console.error("Error fetching hero image:", error);
+      // Set fallback image if API fails
+      setBgImage('/default-hero.jpg');
+    });
+  }, []);
+
 
     useEffect(() => {
       if (typedElement.current){    
@@ -46,7 +62,8 @@ const Herosection = () => {
   return (
     <div className='herosection-container'
     style={{
-      backgroundImage: bgImage ? `url(${bgImage})` : "none",
+      backgroundImage: bgImage ? `url(${bgImage})` : "url('/default-hero.jpg')",
+
       backgroundSize: "cover",
       backgroundPosition: "center",
       display: "flex",
