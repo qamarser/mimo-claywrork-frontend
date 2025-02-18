@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import "../styling css/Navbar.css";
-import Logo from '../assets/logo.svg';
+import Logo from '../assets/Logo.svg';
 import { FaShoppingCart, FaUserCircle, FaChevronDown } from "react-icons/fa";
 import { IoMenu } from "react-icons/io5";
 
