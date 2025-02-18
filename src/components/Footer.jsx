@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
-import Logo from '../assets/logo.svg';
+import Logo from '../assets/Logo.svg';
+
 import { IoLogoInstagram } from "react-icons/io";
 import { TbBrandFacebook } from "react-icons/tb";
 import { PiTiktokLogo } from "react-icons/pi";
